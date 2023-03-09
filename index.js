@@ -4,8 +4,10 @@ const app = express();
 
 app.set('view-engine','ejs');
 
-app.listen( 3000, ()=> {
-    console.log('express listening at 3000');
+const port = process.env.PORT ||  3000;
+
+app.listen( port, ()=> {
+    console.log('express listening at ' + port );
 });
 
 app.use( express.static('public') );
